@@ -31,8 +31,8 @@ def alapmuveletek():
     input()
 
 def main():
-    os.system('cls' if os.name == 'nt' else 'clear')
     while megyaprogram:
+        os.system('cls' if os.name == 'nt' else 'clear')
         print(f"Az irányítások\n0: Kilépés a programból\n1: Négy alapművelet\n2: Megadott szám négyzete\n3: Pitagorasz tétel alkalmazása\n4: Dobókocka")
         kezdes = int(input("Kérlek add meg a választott programot:  "))
         if kezdes == 0:
