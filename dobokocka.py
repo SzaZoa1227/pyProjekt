@@ -45,9 +45,9 @@ def dobokocka(ablakMeret):
 
         ablak.fill(FEHER)
         dobasErtekSzoveg = stilus.render(
-            f"Kockád értéke:{kockaErtek}", True, FEKETE)
+            f"Kockád értéke:\t{kockaErtek}", True, FEKETE)
         dobasSzamSzoveg = stilus.render(
-            f"Dobásaid száma:{dobasSzam}", True, FEKETE)
+            f"Dobásaid száma:\t{dobasSzam}", True, FEKETE)
 
         if kockaErtek is not None:
             for pottyHelye in pottyKoordinatak[kockaErtek]:
