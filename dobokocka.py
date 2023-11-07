@@ -45,15 +45,15 @@ def dobokocka(ablakMeret):
 
         ablak.fill(FEHER)
         dobasErtekSzoveg = stilus.render(
-            f"Kockád értéke:\t{kockaErtek}", True, FEKETE)
+            f"Kockád értéke:    {kockaErtek}", True, FEKETE)
         dobasSzamSzoveg = stilus.render(
-            f"Dobásaid száma:\t{dobasSzam}", True, FEKETE)
+            f"Dobásaid száma:   {dobasSzam}", True, FEKETE)
 
-        if kockaErtek is not None:
+        if kockaErtek is not None: #ha van erteke a dobokockanak(dobott egyet a jatekos es a script generalt ezelott neki erteket, frissitse a kepet, a kocka erteke szerint)
+            ablak.blit(dobasSzamSzoveg, (50, 10))
+            ablak.blit(dobasErtekSzoveg, (50, 30)) 
             for pottyHelye in pottyKoordinatak[kockaErtek]:
                 pygame.draw.circle(ablak, FEKETE, pottyHelye, pottySugar)
-                ablak.blit(dobasSzamSzoveg, (50, 10))
-                ablak.blit(dobasErtekSzoveg, (50, 30))
         else:
             ablak.blit(szoveg, (50, 10))
 

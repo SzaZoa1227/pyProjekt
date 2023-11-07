@@ -59,7 +59,7 @@ def alapmuveletek():  # alapmuveletek elvegzese
     osszeg = a + b
     kulonbseg = a - b
     szorzat = a * b
-    hanyados = a / b
+    hanyados = a/b if a != 0 and b != 0 else "0-val nem lehet osztani!"
     print(
         f"\nÖsszegük: {osszeg}\nKülönbségük: {kulonbseg}\nSzorzatuk: {szorzat}\nHányadosuk: {hanyados}")
     input("\nÜss egy entert ha továbbmehetünk!\t")
