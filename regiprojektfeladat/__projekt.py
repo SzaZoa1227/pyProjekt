@@ -85,7 +85,8 @@ def main():
                 2: negyzet,
                 3: pit,
                 4: dobokockaFx,
-                5: randomSzamok}
+                5: randomSzamok
+                }
     megy = True
     while megy:
         # mivel linuxon dolgozom, nekem is kell, hogy mukodjon a clear

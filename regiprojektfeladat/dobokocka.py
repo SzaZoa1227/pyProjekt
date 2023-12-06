@@ -30,7 +30,7 @@ def dobokocka(ablakMeret):
     # render({szoveg}, {antialiasing (boolean)}, {szin})
     szoveg = stilus.render(
         'Nyomd meg a szóközt egy dobáshoz, vagy a "q"-t hogy kilépj', True, FEKETE)
-
+    dobasErtekek = []
     fut = True
     while fut:
         for event in pygame.event.get():
@@ -40,9 +40,10 @@ def dobokocka(ablakMeret):
                 if event.key == pygame.K_SPACE:  # ha ez az event szokoz lenyomas
                     dobasSzam += 1
                     kockaErtek = random.randint(1, 6)
+                    dobasErtekek.append(kockaErtek)
                 elif event.key == pygame.K_q:  # ha ez az event q betu lenyomasa
                     fut = False
-
+    
         ablak.fill(FEHER)
         dobasErtekSzoveg = stilus.render(
             f"Kockád értéke:    {kockaErtek}", True, FEKETE)
@@ -59,6 +60,14 @@ def dobokocka(ablakMeret):
             ablak.blit(szoveg, (50, 10))
 
         pygame.display.flip()
-
+    kiiras(dobasErtekek,dobasSzam)
     pygame.quit()
     sys.exit()
+
+def kiiras(val1,val2):
+    osszeg = 0
+    for i in val1:
+        osszeg += i
+    f = open("ertekek.txt","w")
+    f.write(osszeg)
+    f.close
