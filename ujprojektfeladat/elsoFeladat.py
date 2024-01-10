@@ -31,9 +31,9 @@ def SzomszedoSzamKulonbseg(lista):
 
 print(lista)
 print(
-    f"\nA legkissebb szám a listában: {lista[minimum(lista)]}\nIndexe: {minimum(lista)}")
+    f"\nA legkissebb szám a listában: {lista[minimum(lista)]}\nHelye: {minimum(lista)+1}")
 print(
-    f"\nA legnagyobb szám a listában: {lista[maximum(lista)]}\nIndexe: {maximum(lista)}")
+    f"\nA legnagyobb szám a listában: {lista[maximum(lista)]}\nHelye: {maximum(lista)+1}")
 print("\nA nulla megtalálható a listában" if 0 in lista else "\nA nulla nem található meg a listában")
 print(
     f"A legnagyobb különbség két szomszédos elem közt: {SzomszedoSzamKulonbseg(lista)}")

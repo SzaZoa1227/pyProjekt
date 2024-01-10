@@ -23,6 +23,7 @@ def transzponalt(matrix):
     transzponaltMatrix = []
     for oszlop in range(oszlopok_szama):
         ideiglenes_sor = []
+        ideiglenes_sor[::-1]
         for sor in range(sorok_szama):
             ideiglenes_sor.append(matrix[sor][oszlop])
         transzponaltMatrix.append(ideiglenes_sor)
