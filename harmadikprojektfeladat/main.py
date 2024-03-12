@@ -65,12 +65,12 @@ print("\nNégyes feladat:\n")
 print(
     f"{legh(hivasokhossza)[0]} másodpercig tartott a leghosszabb hívás, melynek sorszáma: {legh(hivasokhossza)[1]}")
 # 5. feladat
-for adat in nyersadatok:
-    if adat[0] >= 8 and adat[0] < 12:
-        munkaidonBelul.append(adat)
+for i in range(len(nyersadatok)):
+    if nyersadatok[i][0] >= 8 and nyersadatok[i][0] < 12:
+        munkaidonBelul.append((nyersadatok[i],i))
 for adat in munkaidonBelul:
-    tol = [adat[0], adat[1], adat[2]]
-    ig = [adat[3], adat[4], adat[5]]
+    tol = [adat[0][0], adat[0][1], adat[0][2]]
+    ig = [adat[0][3], adat[0][4], adat[0][5]]
     hossz = mpbe(ig) - mpbe(tol)
     munkaidobenHossz.append(hossz)
 print("\nÖtös feladat:\n")
@@ -93,3 +93,9 @@ for i in range(len(nyersadatok)):
         valasztottHivasokKorul.append((nyersadatok[i], i))
 print(f"A megadott időpontban: {inputOra}:{inputPerc}:{inputMp} {valasztottHivasokKorul[1][1]}. sorszámú telefonáló volt vonalban, ekkkor várt: {len(valasztottHivasokKorul)-1} telefonáló.")
 # 6. feladat
+print("\nHatos feladat:\n")
+utolso: list = munkaidonBelul[-1][0]
+utolsokezdes: int = mpbe([utolso[0],utolso[1],utolso[2]])
+utolsoElotti: int = mpbe([munkaidonBelul[-2][0][3],munkaidonBelul[-2][0][4],munkaidonBelul[-2][0][5]])
+varakozas:int = utolsoElotti-utolsokezdes
+print(f"Az utolsó telefonáló sorszáma: {munkaidonBelul[-1][1]}, {varakozas} másodpercet várt.")
