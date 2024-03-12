@@ -24,12 +24,12 @@ def rendesbe(masodpercbenIdopont: int) -> list:
     return [ora, perc, mp]
 
 
-def legk(hivasokhossza: list) -> int:
-    legrovidebb = 0
+def legh(hivasokhossza: list) -> int:
+    legh = 0
     for i in range(1, len(hivasokhossza)):
-        if hivasokhossza[legrovidebb] > hivasokhossza[i]:
-            legrovidebb = i
-    return hivasokhossza[legrovidebb], legrovidebb
+        if hivasokhossza[legh] < hivasokhossza[i]:
+            legh = i
+    return hivasokhossza[legh], legh
 
 
 # változók létrehozása
@@ -63,7 +63,7 @@ for adat in nyersadatok:
     hivasokhossza.append(hossz)
 print("\nNégyes feladat:\n")
 print(
-    f"{legk(hivasokhossza)[0]} másodpercig tartott a legröbvidebb hívás, melynek sorszáma: {legk(hivasokhossza)[1]+1}")
+    f"{legh(hivasokhossza)[0]} másodpercig tartott a leghosszabb hívás, melynek sorszáma: {legh(hivasokhossza)[1]}")
 # 5. feladat
 for adat in nyersadatok:
     if adat[0] >= 8 and adat[0] < 12:
@@ -80,5 +80,16 @@ inputPerc: int = bekeres("Adj meg az órához egy perc értéket! ",
                          0, 59, "0-59 közötti értéket adj meg!")
 inputMp: int = bekeres("Adj meg az órához és a perchez egy másodperc értéket! ",
                        0, 59, "0-59 közötti értéket adj meg!")
+inputido: int = mpbe([inputOra, inputPerc, inputMp])
+inputido2: list = [inputOra, inputPerc, inputMp]
 print(f"A választott időpontod: {inputOra}:{inputPerc}:{inputMp}")
-#nem csinalom meg az 5.feladatot, ez mialofasz?
+valasztottHivasokKorul = []
+for i in range(len(nyersadatok)):
+    kezdet: list = [nyersadatok[i][0], nyersadatok[i][1], nyersadatok[i][2]]
+    veg: list = [nyersadatok[i][3], nyersadatok[i][4], nyersadatok[i][5]]
+    kezdet: int = mpbe(kezdet)
+    veg: int = mpbe(veg)
+    if kezdet < inputido < veg:
+        valasztottHivasokKorul.append((nyersadatok[i], i))
+print(f"A megadott időpontban: {inputOra}:{inputPerc}:{inputMp} {valasztottHivasokKorul[1][1]}. sorszámú telefonáló volt vonalban, ekkkor várt: {len(valasztottHivasokKorul)-1} telefonáló.")
+# 6. feladat
