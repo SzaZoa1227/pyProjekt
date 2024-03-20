@@ -67,7 +67,7 @@ print(
 # 5. feladat
 for i in range(len(nyersadatok)):
     if nyersadatok[i][0] >= 8 and nyersadatok[i][0] < 12:
-        munkaidonBelul.append((nyersadatok[i],i))
+        munkaidonBelul.append((nyersadatok[i], i))
 for adat in munkaidonBelul:
     tol = [adat[0][0], adat[0][1], adat[0][2]]
     ig = [adat[0][3], adat[0][4], adat[0][5]]
@@ -91,11 +91,13 @@ for i in range(len(nyersadatok)):
     veg: int = mpbe(veg)
     if kezdet < inputido < veg:
         valasztottHivasokKorul.append((nyersadatok[i], i))
-print(f"A megadott időpontban: {inputOra}:{inputPerc}:{inputMp} {valasztottHivasokKorul[1][1]}. sorszámú telefonáló volt vonalban, ekkkor várt: {len(valasztottHivasokKorul)-1} telefonáló.")
+print(
+    f"A megadott időpontban: {inputOra}:{inputPerc}:{inputMp} {valasztottHivasokKorul[1][1]}. sorszámú telefonáló volt vonalban, ekkkor várt: {len(valasztottHivasokKorul)-1} telefonáló.")
 # 6. feladat
-print("\nHatos feladat:\n")
-utolso: list = munkaidonBelul[-1][0]
-utolsokezdes: int = mpbe([utolso[0],utolso[1],utolso[2]])
-utolsoElotti: int = mpbe([munkaidonBelul[-2][0][3],munkaidonBelul[-2][0][4],munkaidonBelul[-2][0][5]])
-varakozas:int = utolsoElotti-utolsokezdes
-print(f"Az utolsó telefonáló sorszáma: {munkaidonBelul[-1][1]}, {varakozas} másodpercet várt.")
+print("nincs hatos feladat")
+#7. feladat
+# print(munkaidonBelul)
+with open("sikeres.txt","wt",encoding="utf-8") as ki:
+    for i in range(len(munkaidonBelul)):
+        szoveg: str = f"{i+1} {munkaidonBelul[i][0][0]} {munkaidonBelul[i][0][1]} {munkaidonBelul[i][0][2]} {munkaidonBelul[i][0][3]} {munkaidonBelul[i][0][4]} {munkaidonBelul[i][0][5]}\n"
+        ki.write(szoveg)
