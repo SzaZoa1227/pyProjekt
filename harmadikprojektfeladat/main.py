@@ -30,6 +30,7 @@ def legh(hivasokhossza: list) -> int:
             legh = i
     return hivasokhossza[legh], legh
 
+
 nyersadatok: list = []
 hivasokhossza: list = []
 bejovohivasok: dict = {}
@@ -87,7 +88,8 @@ for i in range(len(nyersadatok)):
 print(
     f"A megadott időpontban: {inputOra}:{inputPerc}:{inputMp} {valasztottHivasokKorul[1][1]}. sorszámú telefonáló volt vonalban, ekkkor várt: {len(valasztottHivasokKorul)-1} telefonáló.")
 print("nincs hatos feladat")
-with open("sikeres.txt","wt",encoding="utf-8") as ki:
+with open("sikeres.txt", "wt", encoding="utf-8") as ki:
     for i in range(len(munkaidonBelul)):
-        szoveg: str = f"{i+1} {munkaidonBelul[i][0][0]} {munkaidonBelul[i][0][1]} {munkaidonBelul[i][0][2]} {munkaidonBelul[i][0][3]} {munkaidonBelul[i][0][4]} {munkaidonBelul[i][0][5]}\n"
+        szoveg: str = f"{i+1} {munkaidonBelul[i][0][0]} {munkaidonBelul[i][0][1]} {munkaidonBelul[i][0][2]} \
+            {munkaidonBelul[i][0][3]} {munkaidonBelul[i][0][4]} {munkaidonBelul[i][0][5]}\n"
         ki.write(szoveg)
