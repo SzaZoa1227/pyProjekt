@@ -58,7 +58,7 @@ for adat in nyersadatok:
     hivasokhossza.append(hossz)
 print("\nNégyes feladat:\n")
 print(
-    f"{legh(hivasokhossza)[0]} másodpercig tartott a leghosszabb hívás, melynek sorszáma: {legh(hivasokhossza)[1]}")
+    f"{legh(hivasokhossza)[0]} másodpercig tartott a leghosszabb hívás, melynek sorszáma: {legh(hivasokhossza)[1]+1}")
 for i in range(len(nyersadatok)):
     if nyersadatok[i][0] >= 8 and nyersadatok[i][0] < 12:
         munkaidonBelul.append((nyersadatok[i], i))
